@@ -1,0 +1,429 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".ResultsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/transparent"
+            android:drawableStart="@drawable/ic_arrow_back"
+            android:drawablePadding="8dp"
+            android:text="Back to Home"
+            android:textColor="@color/black"
+            app:strokeWidth="0dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Diagnosis Results"
+                        android:textColor="@color/green_700"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="We've analyzed your plant image"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/rounded_border"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/diseaseNameTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/green_800"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="Tomato Late Blight" />
+
+                        <TextView
+                            android:id="@+id/scientificNameTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/gray_600"
+                            android:textStyle="italic"
+                            tools:text="Phytophthora infestans" />
+
+                        <TextView
+                            android:id="@+id/descriptionTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/gray_700"
+                            tools:text="A destructive disease affecting tomatoes and potatoes. It causes dark, water-soaked spots on leaves that rapidly enlarge and turn brown." />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/symptomsButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/white"
+                        android:drawableStart="@drawable/ic_info"
+                        android:padding="12dp"
+                        android:text="View Symptoms"
+                        android:textColor="@color/black"
+                        app:strokeColor="@color/gray_300"
+                        app:strokeWidth="1dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Treatment Options"
+                        android:textColor="@color/green_700"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Choose between organic and conventional treatments"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/treatmentTabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:tabSelectedTextColor="@color/green_700">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:icon="@drawable/ic_leaf"
+                            android:text="Organic Solutions" />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:icon="@drawable/ic_syringe"
+                            android:text="Conventional Solutions" />
+                    </com.google.android.material.tabs.TabLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/organicTreatmentsCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/green_50"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_thumbs_up"
+                                    app:tint="@color/green_600" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="Benefits of Organic Treatment"
+                                    android:textColor="@color/green_700"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Organic treatments are environmentally friendly, generally safer for beneficial insects, and don't leave harmful chemical residues."
+                                android:textColor="@color/gray_600"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="Recommended Organic Treatments:"
+                                android:textColor="@color/green_700"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/organicTreatment1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_check"
+                                    android:drawablePadding="8dp"
+                                    android:drawableTint="@color/green_500"
+                                    android:paddingVertical="4dp"
+                                    tools:text="Remove and destroy infected plants" />
+
+                                <TextView
+                                    android:id="@+id/organicTreatment2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_check"
+                                    android:drawablePadding="8dp"
+                                    android:drawableTint="@color/green_500"
+                                    android:paddingVertical="4dp"
+                                    tools:text="Apply copper-based fungicides" />
+
+                                <TextView
+                                    android:id="@+id/organicTreatment3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_check"
+                                    android:drawablePadding="8dp"
+                                    android:drawableTint="@color/green_500"
+                                    android:paddingVertical="4dp"
+                                    tools:text="Use compost tea spray" />
+
+                                <TextView
+                                    android:id="@+id/organicTreatment4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_check"
+                                    android:drawablePadding="8dp"
+                                    android:drawableTint="@color/green_500"
+                                    android:paddingVertical="4dp"
+                                    tools:text="Rotate crops annually" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/conventionalTreatmentsCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/blue_50"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_info"
+                                    app:tint="@color/blue_600" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="About Conventional Treatments"
+                                    android:textColor="@color/blue_700"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Conventional treatments often work more quickly and may be more effective for severe infestations. Always follow label instructions carefully."
+                                android:textColor="@color/gray_600"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="Recommended Conventional Treatments:"
+                                android:textColor="@color/blue_700"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/conventionalTreatment1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_check"
+                                    android:drawablePadding="8dp"
+                                    android:drawableTint="@color/blue_500"
+                                    android:paddingVertical="4dp"
+                                    tools:text="Apply chlorothalonil fungicide" />
+
+                                <TextView
+                                    android:id="@+id/conventionalTreatment2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_check"
+                                    android:drawablePadding="8dp"
+                                    android:drawableTint="@color/blue_500"
+                                    android:paddingVertical="4dp"
+                                    tools:text="Use mancozeb or maneb sprays" />
+
+                                <TextView
+                                    android:id="@+id/conventionalTreatment3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_check"
+                                    android:drawablePadding="8dp"
+                                    android:drawableTint="@color/blue_500"
+                                    android:paddingVertical="4dp"
+                                    tools:text="Apply metalaxyl-based fungicides" />
+
+                                <TextView
+                                    android:id="@+id/conventionalTreatment4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_check"
+                                    android:drawablePadding="8dp"
+                                    android:drawableTint="@color/blue_500"
+                                    android:paddingVertical="4dp"
+                                    tools:text="Treat with azoxystrobin for control" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Prevention Tips:"
+                        android:textColor="@color/green_700"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/preventionTip1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gray_rounded_background"
+                            android:drawableStart="@drawable/ic_check"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/green_500"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            tools:text="Space plants for good air circulation" />
+
+                        <TextView
+                            android:id="@+id/preventionTip2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/gray_rounded_background"
+                            android:drawableStart="@drawable/ic_check"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/green_500"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            tools:text="Water at the base of plants, not the leaves" />
+
+                        <TextView
+                            android:id="@+id/preventionTip3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/gray_rounded_background"
+                            android:drawableStart="@drawable/ic_check"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/green_500"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            tools:text="Remove lower leaves that touch the ground" />
+
+                        <TextView
+                            android:id="@+id/preventionTip4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/gray_rounded_background"
+                            android:drawableStart="@drawable/ic_check"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/green_500"
+                            android:padding="8dp"
+                            android:textSize="14sp"
+                            tools:text="Use disease-resistant varieties when available" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

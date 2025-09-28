@@ -1,0 +1,6 @@
+
+package app.lovable.6b04a77f91594471bd95ce1d048869a7;
+
+import com.getcapacitor.BridgeActivity;
+
+public class MainActivity extends BridgeActivity {}
